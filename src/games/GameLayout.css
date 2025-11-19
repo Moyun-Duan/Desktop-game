@@ -1,0 +1,73 @@
+/* 简单布局和样式，适配小游戏 */
+.app-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  background: #0b74de;
+  color: white;
+}
+.title { margin: 0; font-size: 18px }
+.nav button {
+  margin-left: 8px;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 4px;
+  background: rgba(255,255,255,0.15);
+  color: white;
+  cursor: pointer;
+}
+.nav button.active { background: rgba(255,255,255,0.3) }
+.app-main { flex: 1; padding: 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: calc(100vh - 120px) }
+
+/* Hero Section */
+.hero-section { text-align: center; padding: 40px 20px; color: white }
+.hero-title { font-size: 42px; margin: 0 0 12px 0; font-weight: 700; text-shadow: 2px 2px 4px rgba(0,0,0,0.2) }
+.hero-subtitle { font-size: 18px; margin: 0; opacity: 0.95; font-weight: 300 }
+
+/* Game List */
+.home .game-list { display: flex; gap: 24px; margin: 40px auto; max-width: 900px; justify-content: center; flex-wrap: wrap }
+.game-card { 
+  flex: 1; min-width: 280px; max-width: 400px; padding: 32px 24px; 
+  background: white; border-radius: 16px; cursor: pointer; 
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+.game-card:hover { transform: translateY(-8px); box-shadow: 0 12px 32px rgba(0,0,0,0.25) }
+.game-icon { font-size: 64px; margin-bottom: 16px }
+.game-card h3 { margin: 0 0 12px 0; font-size: 24px; color: #333 }
+.game-desc { color: #666; font-size: 14px; line-height: 1.6; margin: 0 0 20px 0 }
+.game-badge { display: inline-block; padding: 8px 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 20px; font-size: 13px; font-weight: 600 }
+
+.snake-card { border-top: 4px solid #10b981 }
+.mine-card { border-top: 4px solid #f59e0b }
+
+/* Feature Banner */
+.feature-banner { display: flex; gap: 20px; justify-content: center; margin-top: 40px; flex-wrap: wrap }
+.feature-item { padding: 12px 24px; background: rgba(255,255,255,0.2); color: white; border-radius: 24px; font-size: 15px; backdrop-filter: blur(10px) }
+
+.app-footer { padding: 10px 20px; text-align:center; color:#666; font-size:13px; background: white }
+
+/* 游戏容器 - 横版布局 */
+.game-container { display:flex; flex-direction: row; gap:20px; align-items:flex-start; flex-wrap:wrap }
+.game-box { background:white; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1) }
+.game-canvas-area { display: flex; flex-direction: column; align-items: center }
+.game-info-panel { min-width: 200px; padding: 16px; background: #f9fafb; border-radius: 8px; border: 2px solid #e5e7eb }
+.controls { margin-bottom:12px; display: flex; align-items: center; flex-wrap: wrap; gap: 8px }
+
+/* 游戏弹窗 */
+.game-modal-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.6); display: flex; align-items: center; justify-content: center; z-index: 1000; animation: fadeIn 0.2s }
+.game-modal { background: white; padding: 32px; border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); text-align: center; min-width: 320px; animation: slideUp 0.3s }
+.game-modal h2 { margin: 0 0 16px 0; font-size: 28px }
+.game-modal p { margin: 0 0 24px 0; color: #666; font-size: 16px }
+.game-modal button { padding: 12px 32px; border: none; border-radius: 8px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; font-size: 16px; cursor: pointer; font-weight: 600; transition: transform 0.2s }
+.game-modal button:hover { transform: scale(1.05) }
+@keyframes fadeIn { from { opacity: 0 } to { opacity: 1 } }
+@keyframes slideUp { from { transform: translateY(20px); opacity: 0 } to { transform: translateY(0); opacity: 1 } }
